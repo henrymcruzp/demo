@@ -16,11 +16,11 @@ class CreateNotificationsTable extends Migration
         Schema::create('notifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('messange');
+            $table->string('message');
             $table->boolean('status')->default(1);
             $table->timestamps();            
 
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
 
             $table->softDeletes();

@@ -27,3 +27,12 @@ Route::resource('usuario', 'UsuarioController',
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Only - Except
+//Route::resource('notification', 'NotificationController', ['only' => [
+//     'index','create', 'store', 'show','edit','update', 'destroy'
+// ]]);
+
+
+Route::resource('notification', 'NotificationController');
