@@ -1,8 +1,8 @@
 <?php
 
 use App\Notification;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
-
 
 
 class NotificationSeeder extends Seeder
@@ -14,12 +14,21 @@ class NotificationSeeder extends Seeder
      */
     public function run()
     {
-       Notification::create(array(
-           'title' => 'hola',
-           'message'=>'alksjdlksajd',
-           'user_id'=>1
 
-       ));
+        $faker = Factory::create();
 
+
+        for ($i = 0; $i < 100; $i++) {
+//            echo $faker->title, "\n"; (imprimir progreso en terminal)
+
+
+            Notification::create(array(
+
+                'title' => $faker->text,
+                'message' => $faker->text,
+                'user_id' => 1
+
+            ));
+        }
     }
 }

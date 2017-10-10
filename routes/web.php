@@ -36,3 +36,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::resource('notification', 'NotificationController');
+
+Route::get('index', 'NotificationController@index');
