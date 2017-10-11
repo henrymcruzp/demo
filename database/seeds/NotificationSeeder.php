@@ -17,11 +17,8 @@ class NotificationSeeder extends Seeder
 
         $faker = Factory::create();
 
-
         for ($i = 0; $i < 100; $i++) {
 //            echo $faker->title, "\n"; (imprimir progreso en terminal)
-
-
             Notification::create(array(
 
                 'title' => $faker->text,

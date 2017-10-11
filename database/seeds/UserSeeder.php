@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -12,13 +13,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create(array(
-            'name' => 'admin',
-            'email'=>'m@cladian.com',
-            'user_name'=>'admin',
-            'password'=>'1234567890',
-            'is_admin'=>1,
-
-        ));
+        $faker = Factory::create();
+        for ($i = 0; $i < 100; $i++) {
+            User::create(array(
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'user_name' => $faker->name,
+                'password' => '1234567890'
+            ));
+        }
     }
 }
